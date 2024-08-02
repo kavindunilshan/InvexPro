@@ -6,7 +6,10 @@ dotenv.config();
 const connectDB = async (): Promise<void> => {
     try {
         const conn = await mongoose.connect(process.env.MONGO_URI as string, {
-        });
+            useCreateIndex: true,
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        } as mongoose.ConnectOptions );
         console.log(`MongoDB Connected: ${conn.connection.host}`);
     } catch (error) {
         console.error(`Error: ${(error as Error).message}`);
