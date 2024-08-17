@@ -1,6 +1,5 @@
 import Product, {IProduct} from "../models/product";
 
-
 class ProductService {
     async createProduct(data: Partial<IProduct>): Promise<IProduct> {
         const product = new Product(data);

@@ -9,3 +9,4 @@ router.get('/categories/:id', CategoryController.getCategoryById);
 router.put('/categories/:id', CategoryController.updateCategory);
 router.delete('/categories/:id', CategoryController.deleteCategory);
 
+export default router;
