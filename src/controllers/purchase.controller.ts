@@ -1,6 +1,4 @@
-// same as product.controller.ts
-
-import { Request, Response } from 'express';
+import {Request, Response} from 'express';
 import PurchaseService from "../services/purchase.service";
 
 
