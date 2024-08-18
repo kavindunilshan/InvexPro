@@ -1,5 +1,3 @@
-// same as product.service
-
 import Employee, {IEmployee} from "../models/employee";
 
 

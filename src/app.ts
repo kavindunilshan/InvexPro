@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express, {Request, Response} from 'express';
 import dotenv from 'dotenv';
 import connectDB from './config/db';
 
@@ -7,6 +7,7 @@ import customerRoutes from './routes/customer.routes';
 import orderRoutes from "./routes/order.routes";
 import employeeRoutes from "./routes/employee.routes";
 import productRoutes from './routes/product.routes';
+import purchaseRoutes from "./routes/purchase.routes";
 import supplierRoutes from "./routes/supplier.routes";
 
 dotenv.config();
@@ -31,6 +32,7 @@ app.use('/api', customerRoutes);
 app.use('/api', employeeRoutes);
 app.use('/api', orderRoutes);
 app.use('/api', productRoutes);
+app.use('/api', purchaseRoutes);
 app.use('/api', supplierRoutes);
 
 

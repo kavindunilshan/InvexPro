@@ -1,6 +1,4 @@
-// similar to product controller
-
-import { Request, Response } from 'express';
+import {Request, Response} from 'express';
 import OrderService from '../services/order.service';
 
 
