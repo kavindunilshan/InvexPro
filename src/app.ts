@@ -4,6 +4,8 @@ import connectDB from './config/db';
 
 import categoryRoutes from './routes/category.routes';
 import customerRoutes from './routes/customer.routes';
+import orderRoutes from "./routes/order.routes";
+import employeeRoutes from "./routes/employee.routes";
 import productRoutes from './routes/product.routes';
 import supplierRoutes from "./routes/supplier.routes";
 
@@ -26,6 +28,8 @@ app.get('/', (req: Request, res: Response) => {
 
 app.use('/api', categoryRoutes);
 app.use('/api', customerRoutes);
+app.use('/api', employeeRoutes);
+app.use('/api', orderRoutes);
 app.use('/api', productRoutes);
 app.use('/api', supplierRoutes);
 
