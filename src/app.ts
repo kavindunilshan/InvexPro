@@ -26,10 +26,6 @@ connectDB()
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req: Request, res: Response) => {
-    res.send('Welcome to InvexPro API');
-});
-
 app.use('/api', categoryRoutes);
 app.use('/api', customerRoutes);
 app.use('/api', employeeRoutes);
