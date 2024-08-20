@@ -9,6 +9,7 @@ import employeeRoutes from "./routes/employee.routes";
 import productRoutes from './routes/product.routes';
 import purchaseRoutes from "./routes/purchase.routes";
 import supplierRoutes from "./routes/supplier.routes";
+import transactionRoutes from "./routes/transaction.routes";
 import userRoutes from "./routes/user.routes";
 
 dotenv.config();
@@ -35,6 +36,7 @@ app.use('/api', orderRoutes);
 app.use('/api', productRoutes);
 app.use('/api', purchaseRoutes);
 app.use('/api', supplierRoutes);
+app.use('/api', transactionRoutes);
 app.use('/api', userRoutes);
 
 
