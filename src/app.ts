@@ -9,6 +9,7 @@ import employeeRoutes from "./routes/employee.routes";
 import productRoutes from './routes/product.routes';
 import purchaseRoutes from "./routes/purchase.routes";
 import supplierRoutes from "./routes/supplier.routes";
+import userRoutes from "./routes/user.routes";
 
 dotenv.config();
 
@@ -34,6 +35,7 @@ app.use('/api', orderRoutes);
 app.use('/api', productRoutes);
 app.use('/api', purchaseRoutes);
 app.use('/api', supplierRoutes);
+app.use('/api', userRoutes);
 
 
 const PORT: number = Number(process.env.PORT) || 3000;
