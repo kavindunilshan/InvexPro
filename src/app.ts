@@ -5,6 +5,7 @@ import connectDB from './config/db';
 import categoryRoutes from './routes/category.routes';
 import customerRoutes from './routes/customer.routes';
 import orderRoutes from "./routes/order.routes";
+import orderItemRoutes from "./routes/order-item.routes";
 import employeeRoutes from "./routes/employee.routes";
 import productRoutes from './routes/product.routes';
 import purchaseRoutes from "./routes/purchase.routes";
@@ -25,14 +26,11 @@ connectDB()
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req: Request, res: Response) => {
-    res.send('Welcome to InvexPro API');
-});
-
 app.use('/api', categoryRoutes);
 app.use('/api', customerRoutes);
 app.use('/api', employeeRoutes);
 app.use('/api', orderRoutes);
+app.use('/api', orderItemRoutes);
 app.use('/api', productRoutes);
 app.use('/api', purchaseRoutes);
 app.use('/api', supplierRoutes);
