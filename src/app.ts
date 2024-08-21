@@ -1,7 +1,8 @@
-import express, {Request, Response} from 'express';
+import express from 'express';
 import dotenv from 'dotenv';
 import connectDB from './config/db';
 
+import auditRoutes from "./routes/audit.routes";
 import categoryRoutes from './routes/category.routes';
 import customerRoutes from './routes/customer.routes';
 import orderRoutes from "./routes/order.routes";
@@ -26,6 +27,7 @@ connectDB()
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use('/api', auditRoutes);
 app.use('/api', categoryRoutes);
 app.use('/api', customerRoutes);
 app.use('/api', employeeRoutes);
