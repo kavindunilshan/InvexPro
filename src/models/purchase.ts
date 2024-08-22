@@ -8,6 +8,8 @@ export interface IPurchase extends Document {
     totalCost: number;
     orderItems: Array<object>;
     status: string;
+    created_at: Date;
+    updated_at: Date;
 }
 
 const PurchaseSchema: Schema = new Schema({
@@ -17,7 +19,9 @@ const PurchaseSchema: Schema = new Schema({
     expectedArrivalDate: { type: Date },
     totalCost: { type: Number },
     orderItems: { type: Array, required: true },
-    status: { type: String, required: true }
+    status: { type: String, required: true },
+    created_at: { type: Date, default: Date.now },
+    updated_at: { type: Date, default: Date.now }
 });
 
 const Purchase = model<IPurchase>('Purchase', PurchaseSchema);
