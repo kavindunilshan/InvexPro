@@ -9,6 +9,8 @@ export interface IEmployee extends Document {
     country: string;
     phone: string;
     email: string;
+    created_at: Date;
+    updated_at: Date;
 }
 
 const EmployeeSchema: Schema = new Schema({
@@ -19,7 +21,9 @@ const EmployeeSchema: Schema = new Schema({
     postalCode: { type: String, required: true },
     country: { type: String, required: true },
     phone: { type: String, required: true },
-    email: { type: String, required: true }
+    email: { type: String, required: true },
+    created_at: { type: Date, default: Date.now },
+    updated_at: { type: Date, default: Date.now },
 });
 
 const Employee = mongoose.model<IEmployee>('Employee', EmployeeSchema);

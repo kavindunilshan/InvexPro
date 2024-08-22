@@ -7,6 +7,8 @@ export interface IOrder extends Document {
     shippingDate: Date;
     shippingAddress: string;
     totalAmount: number;
+    created_at: Date;
+    updated_at: Date;
 }
 
 const OrderSchema = new Schema({
@@ -16,6 +18,8 @@ const OrderSchema = new Schema({
     shippingDate: { type: Date, required: true },
     shippingAddress: { type: String, required: true },
     totalAmount: { type: Number, required: true },
+    created_at: { type: Date, default: Date.now },
+    updated_at: { type: Date, default: Date.now },
 });
 
 const Order = model<IOrder>('Order', OrderSchema);
