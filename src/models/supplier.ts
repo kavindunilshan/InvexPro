@@ -9,6 +9,8 @@ export interface ISupplier extends Document {
     country: string;
     phone: string;
     email: string;
+    created_at: Date;
+    updated_at: Date;
 }
 
 const SupplierSchema = new Schema({
@@ -20,6 +22,8 @@ const SupplierSchema = new Schema({
     country: { type: String, required: true },
     phone: { type: String, required: true },
     email: { type: String, required: true },
+    created_at: { type: Date, default: Date.now },
+    updated_at: { type: Date, default: Date.now },
 });
 
 const Supplier = model<ISupplier>('Supplier', SupplierSchema);

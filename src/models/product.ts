@@ -9,6 +9,8 @@ export interface IProduct extends Document {
     quantityInStock: number;
     unitPrice: number;
     reorderLevel: number;
+    created_at: Date;
+    updated_at: Date;
 }
 
 
@@ -20,6 +22,8 @@ const ProductSchema = new Schema({
     quantityInStock: { type: Number, required: true },
     unitPrice: { type: Number, required: true },
     reorderLevel: { type: Number, required: true },
+    created_at: { type: Date, default: Date.now },
+    updated_at: { type: Date, default: Date.now },
 });
 
 
