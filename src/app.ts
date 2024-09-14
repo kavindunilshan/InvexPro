@@ -24,6 +24,13 @@ connectDB()
         console.error('Error connecting to MongoDB:', error.message);
     });
 
+// cors port 4200
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+});
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -38,6 +45,10 @@ app.use('/api', purchaseRoutes);
 app.use('/api', supplierRoutes);
 app.use('/api', transactionRoutes);
 app.use('/api', userRoutes);
+
+app.get('/', (req, res) => {
+    res.send('Inventory Management API');
+});
 
 
 const PORT: number = Number(process.env.PORT) || 3000;
