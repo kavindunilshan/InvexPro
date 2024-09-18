@@ -20,6 +20,15 @@ class SupplierController {
         }
     }
 
+    async getAllSupplierNames(req: Request, res: Response): Promise<void> {
+        try {
+            const supplierNames = await SupplierService.getAllSupplierNames();
+            res.status(200).json(supplierNames);
+        } catch (error) {
+            res.status(500).json({error: (error as Error).message});
+        }
+    }
+
     async getSupplierById(req: Request, res: Response): Promise<void> {
         try {
             const supplier = await SupplierService.getSupplierById(req.params.id);

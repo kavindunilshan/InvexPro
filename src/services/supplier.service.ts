@@ -12,6 +12,10 @@ class SupplierService {
         return Supplier.find().exec();
     }
 
+    async getAllSupplierNames(): Promise<string[]> {
+        return Supplier.find().distinct('supplierName').exec();
+    }
+
     async getSupplierById(id: string): Promise<ISupplier | null> {
         return Supplier.findById(id).exec();
     }
