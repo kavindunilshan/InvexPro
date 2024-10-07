@@ -12,7 +12,6 @@ export interface IOrder extends Document {
 }
 
 const OrderSchema = new Schema({
-    orderID: { type: Number, required: true },
     customerID: { type: Schema.Types.ObjectId, ref: 'Customer', required: true },
     orderDate: { type: Date, required: true },
     shippingDate: { type: Date, required: true },
