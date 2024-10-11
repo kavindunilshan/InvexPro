@@ -9,6 +9,7 @@ router.get('/suppliers/names', SupplierController.getAllSupplierNames);
 router.get('/suppliers/:id', SupplierController.getSupplierById);
 router.put('/suppliers/:id', SupplierController.updateSupplier);
 router.delete('/suppliers/:id', SupplierController.deleteSupplier);
+router.get('/suppliers/count', SupplierController.getSupplierCountPerMonth);
 
 
 export default router;

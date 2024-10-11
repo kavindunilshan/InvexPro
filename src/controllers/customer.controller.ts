@@ -59,6 +59,15 @@ class CustomerController {
             res.status(400).json({ message: (error as Error).message });
         }
     }
+
+    async getCustomerCountPerMonth(req: Request, res: Response) {
+        try {
+            const results = await CustomerService.getCustomerCountPerMonth();
+            res.status(200).json(results);
+        } catch (error) {
+            res.status(400).json({ message: (error as Error).message });
+        }
+    }
 }
 
 export default new CustomerController();
