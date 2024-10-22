@@ -7,6 +7,7 @@ export interface IOrder extends Document {
     shippingAddress: string;
     totalAmount: number;
     orderStatus: string;
+    orderItems: Schema.Types.ObjectId[];
     created_at: Date;
     updated_at: Date;
 }
@@ -18,6 +19,7 @@ const OrderSchema = new Schema({
     shippingAddress: { type: String, required: true },
     totalAmount: { type: Number, required: true },
     orderStatus: { type: String, required: true },
+    orderItems: [{ type: Schema.Types.ObjectId, ref: 'OrderItem', required: true }],
     created_at: { type: Date, default: Date.now },
     updated_at: { type: Date, default: Date.now },
 });
