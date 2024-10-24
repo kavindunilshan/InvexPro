@@ -5,9 +5,8 @@ const router = Router();
 
 router.post('/customers', CustomerController.createCustomer);
 router.get('/customers', CustomerController.getAllCustomers);
+router.get('/customers/count', CustomerController.getCustomerCountPerMonth);
 router.get('/customers/:id', CustomerController.getCustomerById);
 router.put('/customers/:id', CustomerController.updateCustomer);
 router.delete('/customers/:id', CustomerController.deleteCustomer);
-router.get('/customers/count', CustomerController.getCustomerCountPerMonth);
-
 export default router;
