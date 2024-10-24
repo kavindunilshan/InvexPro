@@ -13,12 +13,11 @@ export interface IPurchase extends Document {
 }
 
 const PurchaseSchema: Schema = new Schema({
-    orderNumber: { type: String, required: true, unique: true },
     supplier: { type: Schema.Types.ObjectId, ref: 'Supplier', required: true },
-    orderDate: { type: Date, required: true },
+    purchaseDate: { type: Date, required: true },
     expectedArrivalDate: { type: Date },
     totalCost: { type: Number },
-    orderItems: { type: Array, required: true },
+    purchaseItems: { type: Array, required: true },
     status: { type: String, required: true },
     created_at: { type: Date, default: Date.now },
     updated_at: { type: Date, default: Date.now }
