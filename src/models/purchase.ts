@@ -17,7 +17,7 @@ const PurchaseSchema: Schema = new Schema({
     purchaseDate: { type: Date, required: true },
     expectedArrivalDate: { type: Date },
     totalCost: { type: Number },
-    purchaseItems: { type: Array, required: true },
+    purchaseItems: [{ type: Schema.Types.ObjectId, ref: 'PurchaseItem', required: true }],
     status: { type: String, required: true },
     created_at: { type: Date, default: Date.now },
     updated_at: { type: Date, default: Date.now }
