@@ -6,6 +6,7 @@ export interface IPurchaseItem extends Document {
     product_id: string;
     quantity: number;
     price: number;
+    totalPrice: number;
     created_at: Date;
     updated_at: Date;
 }
@@ -15,6 +16,7 @@ const PurchaseItemSchema: Schema = new Schema({
     product_id: { type: Schema.Types.ObjectId, ref: 'Product', required: true },
     quantity: { type: Number, required: true },
     price: { type: Number, required: true },
+    totalPrice: { type: Number, required: true },
     created_at: { type: Date, default: Date.now },
     updated_at: { type: Date, default: Date.now }
 });
