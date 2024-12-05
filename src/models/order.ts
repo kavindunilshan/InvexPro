@@ -2,8 +2,8 @@ import { Schema, model, Document } from 'mongoose';
 
 export interface IOrder extends Document {
     customerID: Schema.Types.ObjectId;
-    orderDate: Date;
-    shippingDate: Date;
+    orderDate: string;
+    shippingDate: string;
     shippingAddress: string;
     totalAmount: number;
     orderStatus: string;
@@ -14,8 +14,8 @@ export interface IOrder extends Document {
 
 const OrderSchema = new Schema({
     customerID: { type: Schema.Types.ObjectId, ref: 'Customer', required: true },
-    orderDate: { type: Date, required: true },
-    shippingDate: { type: Date, required: true },
+    orderDate: { type: String, required: true },
+    shippingDate: { type: String, required: true },
     shippingAddress: { type: String, required: true },
     totalAmount: { type: Number, required: true },
     orderStatus: { type: String, required: true },
