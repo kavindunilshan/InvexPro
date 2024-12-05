@@ -7,6 +7,11 @@ class PurchaseItemService {
         return purchaseItem;
     }
 
+    async createManyPurchaseItems(data: Partial<IPurchaseItem>[]): Promise<IPurchaseItem[]> {
+        const insertedItems = await PurchaseItem.insertMany(data, { rawResult: false });
+        return insertedItems as IPurchaseItem[];
+    }
+
     async getAllPurchaseItems(): Promise<IPurchaseItem[]> {
         return PurchaseItem.find().populate('purchase_id').populate('product_id').exec();
     }

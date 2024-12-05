@@ -11,6 +11,15 @@ class PurchaseItemController {
         }
     }
 
+    async createManyPurchaseItems(req: Request, res: Response): Promise<void> {
+        try {
+            const purchaseItems = await PurchaseItemService.createManyPurchaseItems(req.body);
+            res.status(201).json(purchaseItems);
+        } catch (error) {
+            res.status(400).json({ message: (error as Error).message });
+        }
+    }
+
     async getAllPurchaseItems(req: Request, res: Response): Promise<void> {
         try {
             const purchaseItems = await PurchaseItemService.getAllPurchaseItems();
